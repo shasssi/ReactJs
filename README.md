@@ -5,3 +5,4 @@
 5. npm install html-webpack-plugin --save-dev
 6. npm run start
 7. npm run build
+8. npm install --save-dev style-loader css-loader
