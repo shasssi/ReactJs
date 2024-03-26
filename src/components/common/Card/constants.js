@@ -1,0 +1,1 @@
+const IMAGE_URL = "../../../../public/images/";
