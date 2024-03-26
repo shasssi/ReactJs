@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "React Lifecycle Methods",
+        "image": "lifeCycleMethods.png"
+    },
+    {
+        "id": 2,
+        "name": "React Basics",
+        "image": "reactBasics.jpeg"
+    },
+    {
+        "id": 3,
+        "name": "React Component",
+        "image": "reactComponent.png"
+    },
+    {
+        "id": 4,
+        "name": "React Hooks",
+        "image": "reactHooks.png"
+    },
+    {
+        "id": 5,
+        "name": "React Lazy Loading",
+        "image": "lazyLoading.jpeg"
+    },
+    {
+        "id": 6,
+        "name": "Redux",
+        "image": "redux.png"
+    },
+    {
+        "id": 6,
+        "name": "React Router",
+        "image": "reactRouter.png"
+    },
+    {
+        "id": 6,
+        "name": "React Memo",
+        "image": "reactMemo.webp"
+    },
+    {
+        "id": 6,
+        "name": "JSX",
+        "image": "jsx.png"
+    }
+]
