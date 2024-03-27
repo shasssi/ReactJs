@@ -2,10 +2,14 @@ import makeStyles from "@mui/styles/makeStyles";
 
 const useStyles = makeStyles((theme) => ({
   headerContainer: {
-    backgroundColor: 'aquamarine',
+    backgroundColor: '#5046e5',
     display: "flex",
-    padding: `${theme.spacing(1)} ${theme.spacing(3)}`,
+    padding: `${theme.spacing(1)} ${theme.spacing(9)}`,
     justifyContent: 'space-between',
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: theme.spacing(4),
+      paddingRight: theme.spacing(4),
+    },
   },
   headerContent: {
     display: "flex",
@@ -13,6 +17,10 @@ const useStyles = makeStyles((theme) => ({
   },
   menuItem: {
     marginRight: `${theme.spacing(2)} !important`,
+  },
+  menuIcon: {
+    color: 'white',
+    fontSize: `${theme.spacing(3)} !important`
   }
 }));
 

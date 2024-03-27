@@ -10,6 +10,19 @@ const useStyles = makeStyles((theme) => ({
   cardImage: {
     height: '140px',
     borderRadius: theme.spacing(1),
+  },
+  button: {
+    backgroundColor: '#0fa2e9 !important',
+  },
+  listContainer: {
+    paddingLeft: theme.spacing(3),
+  },
+  list: {
+    listStyleType: 'disc !important',
+  },
+  listItem: {
+    display: 'list-item !important',
+    paddingLeft: '0px !important'
   }
 }));
 
