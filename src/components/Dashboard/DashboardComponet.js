@@ -5,14 +5,13 @@ import useStyles from "./DashboardComponent.style";
 const DashboardComponet = () => {
   const classes = useStyles();
   const [topicsData, setTopicsData] = useState([]);
-  console.log("topicsData", topicsData);
 
   useEffect(() => {
     loadTopicsData();
   }, []);
 
   const loadTopicsData = async () => {
-    const data = await import("../../../public/data/topics.json");
+    const data = await import("../../assets/data/topics.json");
     setTopicsData(data?.default);
   };
 
