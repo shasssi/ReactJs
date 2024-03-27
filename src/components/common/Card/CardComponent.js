@@ -13,7 +13,7 @@ const CardComponent = (props) => {
     <Card className={classes.cardContainer}>
       <CardMedia
         className={classes.cardImage}
-        image={`/images/${data?.image}`}
+        image={`../../../assets/images/${data?.image}`}
         title="react-topics"
       />
       <CardContent>
