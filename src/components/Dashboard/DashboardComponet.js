@@ -17,7 +17,7 @@ const DashboardComponet = () => {
 
   return (
     <div className={classes.dashboardContainer}>
-      {topicsData &&
+      {Array.isArray(topicsData) &&
         topicsData.map((topicObj) => (
           <CardComponent key={topicObj?.id} data={topicObj} />
         ))}
