@@ -6,10 +6,16 @@ import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import useStyles from "./CardComponent.style";
+import { useNavigate } from "react-router-dom";
 
 const CardComponent = (props) => {
   const classes = useStyles();
+  const navigate = useNavigate();
   const { data } = props;
+
+  const handleClick = () => {
+    navigate("/about");
+  };
 
   return (
     <Card className={classes.cardContainer}>
@@ -20,7 +26,11 @@ const CardComponent = (props) => {
       />
       <CardContent>
         {data?.name && (
-          <Button variant="contained" className={classes.button}>
+          <Button
+            variant="contained"
+            onClick={handleClick}
+            className={classes.button}
+          >
             {data?.name}
           </Button>
         )}
