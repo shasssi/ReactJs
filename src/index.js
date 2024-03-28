@@ -1,8 +1,12 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import DashboardComponet from "./components/Dashboard/DashboardComponet";
+
+const TutorialComponent = lazy(() =>
+  import("../src/components/Tutorial/TutorialComponent" /* webpackChunkName: "tutorialComponent" */)
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -16,8 +20,16 @@ const appRouteConfig = createBrowserRouter([
         element: <DashboardComponet />,
       },
       {
-        path: "/about",
-        element: <h1>about</h1>,
+        path: "/react/:topics",
+        element: (
+          <Suspense fallback={<p>Loading...</p>}>
+            <TutorialComponent />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/testroute",
+        element: <h1>Test Route</h1>,
       },
     ],
   },

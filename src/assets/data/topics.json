@@ -2,18 +2,21 @@
   {
     "id": 1,
     "name": "React Lifecycle Methods",
+    "componentName": "lifeCycleMethods",
     "image": "lifeCycleMethods.png",
     "contents": ["Mount", "Update", "Unmount"]
   },
   {
     "id": 2,
     "name": "React Basics",
+    "componentName": "lifeCycleMethods",
     "image": "reactBasics.jpeg",
     "contents": ["Reconciliation", "VirtualDOM", "ReactDOM Renderer"]
   },
   {
     "id": 3,
     "name": "React Component",
+    "componentName": "lifeCycleMethods",
     "image": "reactComponent.png",
     "contents": [
       "Functional Component",
@@ -24,6 +27,7 @@
   {
     "id": 4,
     "name": "React Hooks",
+    "componentName": "lifeCycleMethods",
     "image": "reactHooks.png",
     "contents": [
       "useState, useEffect",
@@ -34,36 +38,42 @@
   {
     "id": 5,
     "name": "React Lazy Loading",
+    "componentName": "lifeCycleMethods",
     "image": "lazyLoading.jpeg",
     "contents": ["Lazy Loading", "React Suspense"]
   },
   {
     "id": 6,
     "name": "Redux",
+    "componentName": "lifeCycleMethods",
     "image": "redux.png",
     "contents": ["Store", "Action, Reducer", "Middleware"]
   },
   {
     "id": 7,
     "name": "React Router",
+    "componentName": "lifeCycleMethods",
     "image": "reactRouter.png",
     "contents": ["BrowserRouter, Routes, Route", "Outlet, Link"]
   },
   {
     "id": 8,
     "name": "JSX",
+    "componentName": "lifeCycleMethods",
     "image": "jsx.png",
     "contents": []
   },
   {
     "id": 9,
     "name": "Webpack",
+    "componentName": "lifeCycleMethods",
     "image": "webpack.png",
     "contents": ["Bundling", "Babel-Loader", "CSS-Loader, Image-Loader"]
   },
   {
     "id": 10,
     "name": "Miscellaneous",
+    "componentName": "lifeCycleMethods",
     "image": "reactMemo.webp",
     "contents": ["React Memo", "Higher Order Component"]
   },

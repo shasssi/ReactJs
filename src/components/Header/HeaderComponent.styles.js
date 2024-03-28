@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuItem: {
     marginRight: `${theme.spacing(2)} !important`,
+    cursor: 'pointer'
   },
   menuIcon: {
     color: 'white',
