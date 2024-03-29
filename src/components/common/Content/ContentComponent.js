@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import useStyles from "./contentComponent.style";
+import useStyles from "./ContentComponent.style";
 
 function ContentComponent(props) {
   const classes = useStyles();
