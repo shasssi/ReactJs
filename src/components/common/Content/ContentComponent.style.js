@@ -20,7 +20,15 @@ const useStyles = makeStyles((theme) => ({
     padding: `${theme.spacing(0.25)} ${theme.spacing(1)}`,
     marginTop: `${theme.spacing(1)} !important`,
     borderRadius: theme.spacing(0.5),
-  }
+  },
+  linkButton: {
+    fontSize: `${theme.spacing(1.5)} !important`,
+    padding: `${theme.spacing(0)} ${theme.spacing(1)} !important`,
+    marginLeft: `${theme.spacing(1)} !important`,
+    background: "#5046e5 !important",
+    color: "white !important",
+    textTransform: "none !important",
+  },
 }));
 
 export default useStyles;
