@@ -12,67 +12,45 @@ import LifeCycleImage from "../../assets/images/lifecycle-diagram.png";
 
 function LifeCycleMethodsComponent(props) {
   const classes = useStyles();
+
+  const renderContentComponent = (configData, isChild = false) => {
+    let type = configData?.mainContent ? "heading" : "lineBreak";
+    let data = isChild ? configData?.content : configData?.mainContent;
+    if (isChild) {
+      type = "subHeading";
+    }
+    return (
+      <Fragment key={configData?.id}>
+        <ContentComponent variant="body2" type={type} data={data} />
+        {configData?.subContent &&
+          renderContentListData(configData?.subContent, true)}
+      </Fragment>
+    );
+  };
+
+  const renderContentListData = (data, isChild = false) => {
+    return (
+      Array.isArray(data) &&
+      data.map((mainContent) => renderContentComponent(mainContent, isChild))
+    );
+  };
+
   return (
     <div>
       <Typography variant="button" className={classes.topHeading}>
         Functional Component Lifecycle Methods
       </Typography>
-      {Array.isArray(functionalComponentData) &&
-        functionalComponentData.map((content) => {
-          return (
-            <Fragment>
-              <ContentComponent
-                key={content?.id}
-                variant="body2"
-                type={content?.mainContent ? "heading" : "lineBreak"}
-                data={content?.mainContent}
-              />
-              {Array.isArray(content?.subContent) &&
-                content?.subContent.map((value) => (
-                  <ContentComponent
-                    key={value?.id}
-                    variant="body2"
-                    type="subHeading"
-                    data={value?.content}
-                  />
-                ))}
-            </Fragment>
-          );
-        })}
+      {renderContentListData(functionalComponentData)}
       <PreFormatComponent data={functionalComponent} />
       <Typography variant="button" className={classes.topHeading}>
         Class Component Lifecycle Methods
       </Typography>
-      {Array.isArray(classComponentData) &&
-        classComponentData.map((content) => {
-          return (
-            <Fragment>
-              <ContentComponent
-                key={content?.id}
-                variant="body2"
-                type={content?.mainContent ? "heading" : "lineBreak"}
-                data={content?.mainContent}
-              />
-              {Array.isArray(content?.subContent) &&
-                content?.subContent.map((value) => (
-                  <ContentComponent
-                    key={value?.id}
-                    variant="body2"
-                    type="subHeading"
-                    data={value?.content}
-                  />
-                ))}
-            </Fragment>
-          );
-        })}
+      {renderContentListData(classComponentData)}
       <PreFormatComponent data={classComponent} />
       <Typography variant="button" className={classes.topHeading}>
         React Lifecycle Flow
       </Typography>
-      <ContentComponent
-        variant="body2"
-        type={"lineBreak"}
-      />
+      <ContentComponent variant="body2" type={"lineBreak"} />
       <div className={classes.image}>
         <img src={LifeCycleImage} alt="lifecyle" />
       </div>

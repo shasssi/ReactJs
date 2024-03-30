@@ -65,7 +65,7 @@ export const classComponentData = [
     ),
     subContent: [
       {
-        id: 1,
+        id: 11,
         content: (
           <span>
             Mount &#x2192; constructor() &#x2192; getDerivedStateFromProps()
@@ -74,7 +74,7 @@ export const classComponentData = [
         ),
       },
       {
-        id: 2,
+        id: 12,
         content: (
           <span>
             Update &#x2192; getDerivedStateFromProps() &#x2192;
@@ -84,8 +84,8 @@ export const classComponentData = [
         ),
       },
       {
-        id: 3,
-        content: <span>Mount &#x2192; componentWillUnmount()</span>,
+        id: 13,
+        content: <span>Unmount &#x2192; componentWillUnmount()</span>,
       },
     ],
   },
@@ -94,7 +94,7 @@ export const classComponentData = [
     mainContent: "",
     subContent: [
       {
-        id: 1,
+        id: 21,
         content: (
           <span>
             <b>getDerivedStateFromProps</b> &#x2192; It is called right before
@@ -105,7 +105,7 @@ export const classComponentData = [
         ),
       },
       {
-        id: 2,
+        id: 22,
         content: (
           <span>
             <b>shouldComponentUpdate</b> &#x2192; This returns a boolean which
@@ -115,7 +115,7 @@ export const classComponentData = [
         ),
       },
       {
-        id: 3,
+        id: 23,
         content: (
           <span>
             <b>getSnapshotBeforeUpdate</b> &#x2192; Here we have the access to
@@ -127,7 +127,7 @@ export const classComponentData = [
         ),
       },
       {
-        id: 4,
+        id: 24,
         content: (
           <span>
             <b>componentDidUpdate</b> &#x2192; This methods gets called after
