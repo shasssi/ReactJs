@@ -16,7 +16,7 @@
   {
     "id": 3,
     "name": "React Component",
-    "componentName": "lifeCycleMethods",
+    "componentName": "components",
     "image": "reactComponent.png",
     "contents": [
       "Functional Component",

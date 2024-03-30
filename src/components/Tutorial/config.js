@@ -5,7 +5,13 @@ const LifeCycleMethodsComponent = lazy(() =>
     "../LifeCycleMethods/LifeCycleMethodsComponent" /* webpackChunkName: "lifeCycleMethodsComponent" */
   )
 );
+const ReactComponents = lazy(() =>
+  import(
+    "../ReactComponents/ReactComponents" /* webpackChunkName: "ReactComponents" */
+  )
+);
 
 export const componentsConfig = {
   lifeCycleMethods: LifeCycleMethodsComponent,
+  components: ReactComponents,
 };

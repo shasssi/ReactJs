@@ -1,6 +1,6 @@
 import React from "react";
 
-export const functionalComponent = `import React, { Fragment, useEffect, useState } from "react";
+export const functionalComponentCode = `import React, { Fragment, useEffect, useState } from "react";
 
 function FunctionalComponet() {
   const [countValue, setCountValue] = useState(0);
@@ -26,7 +26,7 @@ function FunctionalComponet() {
 
 export default FunctionalComponet;`;
 
-export const functionalComponentData = [
+export const functionalComponentLifeCycleData = [
   {
     id: 1,
     mainContent: (
@@ -115,6 +115,47 @@ export const functionalComponentData = [
             (Here two times rendering will happen since we call API in{" "}
             <b>componentDidMount</b>. But here comes the react whose render
             cycle are very fast. Hence this approach gives better UX.)
+          </span>
+        ),
+      },
+    ],
+  },
+];
+
+export const functionalComponentData = [
+  {
+    id: 1,
+    mainContent: (
+      <span>
+        Functional component &#x2192; It is a normal javascript function that
+        accepts props as an argument and returns a JSX.
+      </span>
+    ),
+    subContent: [
+      {
+        id: 11,
+        content: (
+          <span>
+            &#x25CF; It is also known as <b>Stateless components</b> &#x2192;
+            doesn't have its internal state management.
+          </span>
+        ),
+      },
+      {
+        id: 12,
+        content: (
+          <span>&#x25CF; It doesn't have built-in react lifeCycleMethods.</span>
+        ),
+        route: "/react/lifeCycleMethods",
+        linkText: 'Check React Lifecycle'
+      },
+      {
+        id: 13,
+        content: (
+          <span>
+            &#x25CF; <b>React Hooks</b> are used in functional component to make
+            them <b>Stateful (useState)</b> &#x2192; to use lifeCycleMethods
+            inside functional component we use different <b>useEffect</b> hooks.
           </span>
         ),
       },

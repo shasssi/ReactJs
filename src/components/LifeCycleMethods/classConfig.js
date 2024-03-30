@@ -1,6 +1,6 @@
 import React from "react";
 
-export const classComponent = `import React from "react";
+export const classComponentCode = `import React from "react";
 
 class ClassComponent extends React.Component {
   constructor(props) {
@@ -54,7 +54,7 @@ class ClassComponent extends React.Component {
 
 export default ClassComponent;`;
 
-export const classComponentData = [
+export const classComponentLifeCycleData = [
   {
     id: 1,
     mainContent: (
@@ -136,6 +136,39 @@ export const classComponentData = [
             re-render cycle.
           </span>
         ),
+      },
+    ],
+  },
+];
+
+export const classComponentData = [
+  {
+    id: 1,
+    mainContent: (
+      <span>
+        Class component &#x2192; It is a normal class that extends{" "}
+        <b>React.Component </b>that has a <b>render()</b> method which returns a
+        JSX.
+      </span>
+    ),
+    subContent: [
+      {
+        id: 11,
+        content: (
+          <span>
+            &#x25CF; It is also known as <b>Stateful components</b> &#x2192;
+            Constructor is used as it needs to store state. It can manage and
+            store their internal state.
+          </span>
+        ),
+      },
+      {
+        id: 12,
+        content: (
+          <span>&#x25CF; It have built-in react lifeCycleMethods. </span>
+        ),
+        route: "/react/lifeCycleMethods",
+        linkText: "Check React Lifecycle",
       },
     ],
   },
