@@ -31,7 +31,9 @@ export const functionalComponentData = [
     id: 1,
     mainContent: (
       <span>
-        Functional component doesn't have built-in lifecycle methods. We use React Hooks for that. Every component have 3 lifecycle methods (Mount, Update, Unmount).
+        Functional component doesn't have built-in lifecycle methods. We use
+        React Hooks for that. Every component have 3 lifecycle methods (Mount,
+        Update, Unmount).
       </span>
     ),
     subContent: [
@@ -94,17 +96,25 @@ export const functionalComponentData = [
         content: (
           <span>
             &#x25CF; <b>Page Loads &#x2192; API call (500ms) &#x2192; Render</b>{" "}
-            [ In this approach for 500ms the UI will be kind of blank & then
-            suddenlt the data get loaded. This is poor UX (user experience)
-            where page seems to be frozen for sometimes. ] <br />
+            (In this approach for 500ms the UI will be kind of blank & then
+            suddenly the data get loaded. This is poor UX (user experience)
+            where page seems to be frozen for sometimes.)
+          </span>
+        ),
+      },
+      {
+        id: 2,
+        content: (
+          <span>
             &#x25CF;{" "}
             <b>
+              {" "}
               Page Loads &#x2192; Render &#x2192; API call (500ms) &#x2192;
-              Render
-            </b>{" "}
-            [ Here two times rendering will happen since we call API in{" "}
+              Render{" "}
+            </b>
+            (Here two times rendering will happen since we call API in{" "}
             <b>componentDidMount</b>. But here comes the react whose render
-            cycle are very fast. Hence this approach gives better UX. ]
+            cycle are very fast. Hence this approach gives better UX.)
           </span>
         ),
       },

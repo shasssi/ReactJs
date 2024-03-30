@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: `12px !important`,
     },
   },
+  image: {
+    overflow: 'scroll'
+  }
 }));
 
 export default useStyles;

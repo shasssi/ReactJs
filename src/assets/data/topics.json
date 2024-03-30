@@ -3,7 +3,7 @@
     "id": 1,
     "name": "React Lifecycle Methods",
     "componentName": "lifeCycleMethods",
-    "image": "lifeCycleMethods.png",
+    "image": "lifeCycleMethods.jpeg",
     "contents": ["Mount", "Update", "Unmount"]
   },
   {
