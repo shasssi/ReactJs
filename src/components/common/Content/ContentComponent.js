@@ -10,11 +10,7 @@ function ContentComponent(props) {
     ...(variant ? { variant } : {}),
     ...(customClass ? { className: customClass } : {}),
   };
-  return (
-    <Typography {...componentProps}>
-      {data}
-    </Typography>
-  );
+  return <Typography {...componentProps}>{data}</Typography>;
 }
 
 export default ContentComponent;

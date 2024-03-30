@@ -38,7 +38,7 @@ export const functionalComponentData = [
     ),
     subContent: [
       {
-        id: 1,
+        id: 11,
         content: (
           <span>
             Mount &#x2192; Whenever any components gets loaded &#x2192; first it
@@ -48,7 +48,7 @@ export const functionalComponentData = [
         ),
       },
       {
-        id: 2,
+        id: 12,
         content: (
           <span>
             Update &#x2192; Whenever state or props get updated &#x2192; it
@@ -58,7 +58,7 @@ export const functionalComponentData = [
         ),
       },
       {
-        id: 3,
+        id: 13,
         content: (
           <span>
             Unmount &#x2192; Whenever components get unMounted &#x2192; it calls
@@ -73,7 +73,7 @@ export const functionalComponentData = [
     mainContent: "",
     subContent: [
       {
-        id: 1,
+        id: 21,
         content: (
           <span>
             <b>ComponentDidMount</b> &#x2192; This gets called after inital
@@ -92,7 +92,7 @@ export const functionalComponentData = [
     mainContent: "There are two approach to load data in webpage.",
     subContent: [
       {
-        id: 1,
+        id: 31,
         content: (
           <span>
             &#x25CF; <b>Page Loads &#x2192; API call (500ms) &#x2192; Render</b>{" "}
@@ -103,7 +103,7 @@ export const functionalComponentData = [
         ),
       },
       {
-        id: 2,
+        id: 32,
         content: (
           <span>
             &#x25CF;{" "}
