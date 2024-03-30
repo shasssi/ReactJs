@@ -77,8 +77,40 @@ export const classComponentData = [
         id: 2,
         content: (
           <span>
-            Update &#x2192; getDerivedStateFromProps() &#x2192; shouldComponentUpdate()
-            &#x2192; render() &#x2192; getSnapshotBeforeUpdate() &#x2192; componentDidUpdate()
+            Update &#x2192; getDerivedStateFromProps() &#x2192;
+            shouldComponentUpdate() &#x2192; render() &#x2192;
+            getSnapshotBeforeUpdate() &#x2192; componentDidUpdate()
+          </span>
+        ),
+      },
+      {
+        id: 3,
+        content: <span>Mount &#x2192; componentWillUnmount()</span>,
+      },
+    ],
+  },
+  {
+    id: 2,
+    mainContent: "",
+    subContent: [
+      {
+        id: 1,
+        content: (
+          <span>
+            <b>getDerivedStateFromProps</b> &#x2192; It is called right before
+            rendering of the component. &#x25CF; This is the place to set state
+            object based on intitial props. &#x25CF; It returns an object with
+            changes to the state.
+          </span>
+        ),
+      },
+      {
+        id: 2,
+        content: (
+          <span>
+            <b>shouldComponentUpdate</b> &#x2192; This returns a boolean which
+            tells React whether to re-render the component or not. &#x25CF; The
+            default value is true.
           </span>
         ),
       },
@@ -86,7 +118,22 @@ export const classComponentData = [
         id: 3,
         content: (
           <span>
-            Mount &#x2192; componentWillUnmount()
+            <b>getSnapshotBeforeUpdate</b> &#x2192; Here we have the access to
+            the props & state before the update. &#x25CF; we can check what
+            values were there brfore the update. &#x25CF; we should include
+            componentDidUpdate if we use getSnapshotBeforeUpdate, else it will
+            give error.
+          </span>
+        ),
+      },
+      {
+        id: 4,
+        content: (
+          <span>
+            <b>componentDidUpdate</b> &#x2192; This methods gets called after
+            the component gets re-rendered and updated in the DOM. &#x2192; we
+            should not do setState inside this or else it will go into infite
+            re-render cycle.
           </span>
         ),
       },

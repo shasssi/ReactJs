@@ -8,6 +8,7 @@ import {
 import { classComponent, classComponentData } from "./classConfig";
 import ContentComponent from "../common/Content/ContentComponent";
 import useStyles from "./LifeCycleMethods.style";
+import LifeCycleImage from "../../assets/images/lifecycle-diagram.png";
 
 function LifeCycleMethodsComponent(props) {
   const classes = useStyles();
@@ -65,6 +66,16 @@ function LifeCycleMethodsComponent(props) {
           );
         })}
       <PreFormatComponent data={classComponent} />
+      <Typography variant="button" className={classes.topHeading}>
+        React Lifecycle Flow
+      </Typography>
+      <ContentComponent
+        variant="body2"
+        type={"lineBreak"}
+      />
+      <div className={classes.image}>
+        <img src={LifeCycleImage} alt="lifecyle" />
+      </div>
     </div>
   );
 }
