@@ -167,7 +167,7 @@ export const classComponentData = [
         content: (
           <span>&#x25CF; It have built-in react lifeCycleMethods. </span>
         ),
-        route: "/react/lifeCycleMethods",
+        route: "/react/lifeCycle",
         linkText: "Check React Lifecycle",
       },
     ],

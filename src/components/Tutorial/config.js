@@ -10,8 +10,14 @@ const ReactComponents = lazy(() =>
     "../ReactComponents/ReactComponents" /* webpackChunkName: "ReactComponents" */
   )
 );
+const ReactRouterComponent = lazy(() =>
+  import(
+    "../ReactRouter/ReactRouterComponenet" /* webpackChunkName: "ReactRouterComponent" */
+  )
+);
 
 export const componentsConfig = {
-  lifeCycleMethods: LifeCycleMethodsComponent,
+  lifeCycle: LifeCycleMethodsComponent,
   components: ReactComponents,
+  router: ReactRouterComponent,
 };
