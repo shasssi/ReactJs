@@ -5,6 +5,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Dashboard from "./Dashboard";
+import About from "./About";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -19,7 +20,7 @@ const appRouteConfig = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <h1>Hello from about page !!!</h1>,
+        element: <About />,
       },
     ],
   },
