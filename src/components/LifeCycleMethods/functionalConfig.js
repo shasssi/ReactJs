@@ -146,7 +146,7 @@ export const functionalComponentData = [
         content: (
           <span>&#x25CF; It doesn't have built-in react lifeCycleMethods.</span>
         ),
-        route: "/react/lifeCycleMethods",
+        route: "/react/lifeCycle",
         linkText: 'Check React Lifecycle'
       },
       {
