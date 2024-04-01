@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Grid from "@mui/material/Grid";
 import CardComponent from "../common/Card/CardComponent";
 import useStyles from "./DashboardComponent.style";
 
@@ -16,12 +17,14 @@ const DashboardComponet = () => {
   };
 
   return (
-    <div className={classes.dashboardContainer}>
+    <Grid container className={classes.dashboardContainer}>
       {Array.isArray(topicsData) &&
         topicsData.map((topicObj) => (
-          <CardComponent key={topicObj?.id} data={topicObj} />
+          <Grid item className={classes.cardSize}>
+            <CardComponent key={topicObj?.id} data={topicObj} />
+          </Grid>
         ))}
-    </div>
+    </Grid>
   );
 };
 
