@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "React Lifecycle Methods",
+    "name": "React Lifecycle",
     "componentName": "lifeCycle",
     "image": "lifeCycleMethods.jpeg",
     "contents": ["Mount", "Update", "Unmount"]
@@ -76,7 +76,5 @@
     "componentName": "lifeCycle",
     "image": "reactMemo.webp",
     "contents": ["React Memo", "Higher Order Component"]
-  },
-  { "id": 11 },
-  { "id": 12 }
+  }
 ]

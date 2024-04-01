@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     padding: `${theme.spacing(1)} ${theme.spacing(9)}`,
     justifyContent: 'space-between',
+    paddingBottom: theme.spacing(0.5),
     [theme.breakpoints.down('md')]: {
       paddingLeft: theme.spacing(4),
       paddingRight: theme.spacing(4),

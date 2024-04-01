@@ -24,12 +24,13 @@ const CardComponent = (props) => {
         image={`../../../assets/images/${data?.image}`}
         title={data?.name}
       />
-      <CardContent>
+      <CardContent className={classes.cardContent}>
         {data?.name && (
           <Button
-            variant="contained"
+            variant="outlined"
             onClick={() => handleClick(data?.componentName)}
             className={classes.button}
+            color="secondary"
           >
             {data?.name}
           </Button>
