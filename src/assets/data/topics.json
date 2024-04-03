@@ -59,9 +59,9 @@
   {
     "id": 8,
     "name": "JSX",
-    "componentName": "lifeCycle",
+    "componentName": "jsx",
     "image": "jsx.png",
-    "contents": []
+    "contents": ["React Element", "Babel"]
   },
   {
     "id": 9,

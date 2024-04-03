@@ -7,12 +7,17 @@ const LifeCycleMethodsComponent = lazy(() =>
 );
 const ReactComponents = lazy(() =>
   import(
-    "../ReactComponents/ReactComponents" /* webpackChunkName: "ReactComponents" */
+    "../ReactComponents/ReactComponents" /* webpackChunkName: "reactComponents" */
   )
 );
 const ReactRouterComponent = lazy(() =>
   import(
-    "../ReactRouter/ReactRouterComponenet" /* webpackChunkName: "ReactRouterComponent" */
+    "../ReactRouter/ReactRouterComponenet" /* webpackChunkName: "reactRouterComponent" */
+  )
+);
+const ReactElementComponent = lazy(() =>
+  import(
+    "../ReactElement/ReactElementComponent" /* webpackChunkName: "reactElementComponent" */
   )
 );
 
@@ -20,4 +25,5 @@ export const componentsConfig = {
   lifeCycle: LifeCycleMethodsComponent,
   components: ReactComponents,
   router: ReactRouterComponent,
+  jsx: ReactElementComponent,
 };
