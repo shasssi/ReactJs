@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import DashboardComponet from "./components/Dashboard/DashboardComponet";
+import SkeletonComponent from "./components/common/Skeleton/SkeletonComponent";
 
 const TutorialComponent = lazy(() =>
   import("../src/components/Tutorial/TutorialComponent" /* webpackChunkName: "tutorialComponent" */)
@@ -22,7 +23,7 @@ const appRouteConfig = createBrowserRouter([
       {
         path: "/react/:topics",
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<SkeletonComponent />}>
             <TutorialComponent />
           </Suspense>
         ),
