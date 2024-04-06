@@ -9,7 +9,7 @@ const TopicsComponent = lazy(() =>
   import("../src/components/Topics" /* webpackChunkName: "topicsComponent" */)
 );
 const AboutComponent = lazy(() =>
-  import("../src/components/About" /* webpackChunkName: "topicsComponent" */)
+  import("../src/components/About" /* webpackChunkName: "aboutComponent" */)
 );
 
 const appRouteConfig = createBrowserRouter([
