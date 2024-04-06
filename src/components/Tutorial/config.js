@@ -20,10 +20,16 @@ const ReactElementComponent = lazy(() =>
     "../ReactElement/ReactElementComponent" /* webpackChunkName: "reactElementComponent" */
   )
 );
+const LazyComponent = lazy(() =>
+  import(
+    "../Lazy/LazyComponent" /* webpackChunkName: "lazyComponent" */
+  )
+);
 
 export const componentsConfig = {
   lifeCycle: LifeCycleMethodsComponent,
   components: ReactComponents,
   router: ReactRouterComponent,
   jsx: ReactElementComponent,
+  lazy: LazyComponent,
 };

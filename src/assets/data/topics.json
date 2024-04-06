@@ -38,7 +38,7 @@
   {
     "id": 5,
     "name": "React Lazy Loading",
-    "componentName": "lifeCycle",
+    "componentName": "lazy",
     "image": "lazyLoading.jpeg",
     "contents": ["Lazy Loading", "React Suspense"]
   },
