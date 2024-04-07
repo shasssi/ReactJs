@@ -92,7 +92,7 @@ export const lazyLoadinData = [
         ),
       },
       {
-        id: 14,
+        id: 15,
         content: (
           <span>
             <b>Disdvantages</b> &#x2192; It may effect the website's ranking on

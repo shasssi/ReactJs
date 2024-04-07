@@ -66,9 +66,9 @@
   {
     "id": 9,
     "name": "Webpack",
-    "componentName": "lifeCycle",
+    "componentName": "bundlers",
     "image": "webpack.png",
-    "contents": ["Bundling", "Babel-Loader", "CSS-Loader, Image-Loader"]
+    "contents": ["Create React App", "Babel-Loader", "CSS-Loader, Image-Loader"]
   },
   {
     "id": 10,

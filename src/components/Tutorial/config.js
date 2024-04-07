@@ -21,9 +21,10 @@ const ReactElementComponent = lazy(() =>
   )
 );
 const LazyComponent = lazy(() =>
-  import(
-    "../Lazy/LazyComponent" /* webpackChunkName: "lazyComponent" */
-  )
+  import("../Lazy/LazyComponent" /* webpackChunkName: "lazyComponent" */)
+);
+const BundlersComponent = lazy(() =>
+  import("../Bundlers/BundleComponent" /* webpackChunkName: "bundleComponent" */)
 );
 
 export const componentsConfig = {
@@ -32,4 +33,5 @@ export const componentsConfig = {
   router: ReactRouterComponent,
   jsx: ReactElementComponent,
   lazy: LazyComponent,
+  bundlers: BundlersComponent,
 };

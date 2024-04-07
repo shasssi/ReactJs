@@ -20,8 +20,8 @@ const DashboardComponet = () => {
     <Grid container className={classes.dashboardContainer}>
       {Array.isArray(topicsData) &&
         topicsData.map((topicObj) => (
-          <Grid item className={classes.cardSize}>
-            <CardComponent key={topicObj?.id} data={topicObj} />
+          <Grid key={topicObj?.id} item className={classes.cardSize}>
+            <CardComponent data={topicObj} />
           </Grid>
         ))}
     </Grid>
