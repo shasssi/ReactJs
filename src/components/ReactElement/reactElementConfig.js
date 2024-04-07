@@ -129,7 +129,7 @@ export const jsxBabelData = [
         ),
       },
       {
-        id: 13,
+        id: 14,
         content: (
           <span>
             In React we can use normal javascript expression with JSX. For this
@@ -138,7 +138,7 @@ export const jsxBabelData = [
         ),
       },
       {
-        id: 13,
+        id: 15,
         content: (
           <span>
             <b>
