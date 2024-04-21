@@ -379,8 +379,8 @@ export const useContextData = [
         id: 12,
         content: (
           <span>
-            <b>Below Code</b> &#x2192; Here comp2, comp3 doesn't need the data
-            but also it is passed so that it could reach to comp4 via props.
+            <b>Below Code with prop drilling</b> &#x2192; Here comp2, comp3 doesn't need the data
+            but also the data should be passed so that it could reach to comp4 via props.
           </span>
         ),
       },
