@@ -27,7 +27,7 @@
   {
     "id": 4,
     "name": "React Hooks",
-    "componentName": "lifeCycle",
+    "componentName": "hooks",
     "image": "reactHooks.png",
     "contents": [
       "useState, useEffect",
