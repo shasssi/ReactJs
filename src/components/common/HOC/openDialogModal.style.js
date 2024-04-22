@@ -18,8 +18,11 @@ const useStyles = makeStyles((theme) => ({
   header: {
     borderBottom: "0.5px solid #9e9e9e78",
     padding: theme.spacing(2),
-    fontSize: `${theme.spacing(3)} !important`,
+    fontSize: `20px !important`,
     color: '#837f7f',
+    [theme.breakpoints.down("md")]: {
+      fontSize: `18px !important`,
+    },
   },
   content: {
     borderBottom: "0.5px solid #9e9e9e78",

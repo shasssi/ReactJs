@@ -12,7 +12,7 @@ import {
   jsxBabelCode,
 } from "./reactElementConfig";
 
-function ReactComponents(props) {
+function ReactElementComponent(props) {
   const classes = useStyles();
 
   return (
@@ -30,4 +30,4 @@ function ReactComponents(props) {
   );
 }
 
-export default ReactComponents;
+export default ReactElementComponent;

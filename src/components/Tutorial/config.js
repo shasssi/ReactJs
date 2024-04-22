@@ -29,6 +29,9 @@ const BundlersComponent = lazy(() =>
 const ReactHooksComponent = lazy(() =>
   import("../Hooks/ReactHooksComponent" /* webpackChunkName: "hooksComponent" */)
 );
+const MiscellaneousComponent = lazy(() =>
+  import("../Miscellaneous/MiscellaneousComponent" /* webpackChunkName: "miscellaneousComponent" */)
+);
 
 export const componentsConfig = {
   lifeCycle: LifeCycleMethodsComponent,
@@ -38,4 +41,5 @@ export const componentsConfig = {
   lazy: LazyComponent,
   bundlers: BundlersComponent,
   hooks: ReactHooksComponent,
+  miscellaneous: MiscellaneousComponent,
 };

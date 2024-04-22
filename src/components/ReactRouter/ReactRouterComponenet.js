@@ -14,7 +14,7 @@ import {
   useLocationHooksCode,
 } from "./reactRouterConfig";
 
-function ReactComponents(props) {
+function ReactRouterComponenet(props) {
   const classes = useStyles();
 
   return (
@@ -34,4 +34,4 @@ function ReactComponents(props) {
   );
 }
 
-export default ReactComponents;
+export default ReactRouterComponenet;

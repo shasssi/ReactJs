@@ -9,7 +9,7 @@ import {
   suspenseData,
 } from "./lazyLoadingConfig";
 
-function ReactComponents(props) {
+function LazyComponent(props) {
   const classes = useStyles();
 
   return (
@@ -24,4 +24,4 @@ function ReactComponents(props) {
   );
 }
 
-export default ReactComponents;
+export default LazyComponent;

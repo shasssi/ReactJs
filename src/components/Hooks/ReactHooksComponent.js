@@ -20,7 +20,7 @@ import {
   useContextCode,
 } from "./reactHooksConfig";
 
-function ReactComponents(props) {
+function ReactHooksComponent(props) {
   const classes = useStyles();
 
   return (
@@ -52,4 +52,4 @@ function ReactComponents(props) {
   );
 }
 
-export default ReactComponents;
+export default ReactHooksComponent;

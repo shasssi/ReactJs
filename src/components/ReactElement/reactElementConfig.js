@@ -45,7 +45,7 @@ export const jsxData = [
     id: 1,
     mainContent: (
       <span>
-        JSX &#x2192; Javascript XML. It is basicall a syntax extension of
+        JSX &#x2192; Javascript XML like syntax. It is basicall a syntax extension of
         Javascript which makes it easier to create React Elements.
       </span>
     ),
