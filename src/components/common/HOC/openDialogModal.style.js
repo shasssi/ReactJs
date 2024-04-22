@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
       outline: "none !important",
     },
     [theme.breakpoints.down("md")]: {
-      width: "400px",
+      width: "350px",
     },
   },
   header: {
