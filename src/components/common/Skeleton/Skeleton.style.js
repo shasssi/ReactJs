@@ -11,12 +11,14 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     fontSize: theme.spacing(5),
+    backgroundColor: 'rgb(0 0 0 / 3%) !important',
   },
   subHeading: {
     fontSize: theme.spacing(3),
     marginLeft: `${theme.spacing(3)} !important`,
     marginTop: `${theme.spacing(0)} !important`,
-    backgroundColor: 'cornsilk !important'
+    // backgroundColor: 'cornsilk !important'
+    backgroundColor: 'rgb(0 0 0 / 3%) !important',
   },
   rondedRectangle: {
     width: '100% !important',

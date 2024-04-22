@@ -18,7 +18,10 @@ const CardComponent = (props) => {
   };
 
   return (
-    <Card className={classes.cardContainer}>
+    <Card
+      className={classes.cardContainer}
+      onClick={() => handleClick(data?.componentName)}
+    >
       <CardMedia
         className={classes.cardImage}
         image={`../../../assets/images/${data?.image}`}

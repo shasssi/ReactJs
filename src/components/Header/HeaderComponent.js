@@ -5,10 +5,21 @@ import Home from "@mui/icons-material/Home";
 import ArrowBack from "@mui/icons-material/ArrowBack";
 import Logout from "@mui/icons-material/Logout";
 import useStyles from "./HeaderComponent.styles";
+import dialogModalHOC from "../common/HOC/openDialogModal";
+import { LOGOUT_CONTENT_TEXT, LOGOUT_HEADER_TEXT } from "../constant";
 
-export default function HeaderComponent() {
+function HeaderComponent(props) {
   const classes = useStyles();
   const navigate = useNavigate();
+  const { openDialogModal } = props;
+
+  const handleLogout = () => {
+    openDialogModal({
+      open: true,
+      header: LOGOUT_HEADER_TEXT,
+      content: LOGOUT_CONTENT_TEXT,
+    });
+  };
 
   return (
     <div className={classes.headerContainer}>
@@ -20,7 +31,9 @@ export default function HeaderComponent() {
           <ArrowBack className={classes.menuIcon} />
         </Typography>
       </div>
-      <Logout className={classes.menuIcon} />
+      <Logout className={classes.menuIcon} onClick={handleLogout} />
     </div>
   );
 }
+
+export default dialogModalHOC(HeaderComponent);
