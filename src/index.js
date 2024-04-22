@@ -30,7 +30,7 @@ const appRouteConfig = createBrowserRouter([
       },
       {
         path: "/testroute",
-        element: <h1>Test Route</h1>,
+        element: <SkeletonComponent />,
       },
     ],
   },
