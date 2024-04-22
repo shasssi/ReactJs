@@ -73,7 +73,7 @@
   {
     "id": 10,
     "name": "Miscellaneous",
-    "componentName": "lifeCycle",
+    "componentName": "miscellaneous",
     "image": "reactMemo.webp",
     "contents": ["React Memo", "Higher Order Component"]
   }
