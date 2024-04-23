@@ -24,6 +24,10 @@ function HeaderComponent(props) {
     });
   };
 
+  const openBookMarkDrawer = () => {
+    setOpenDrawer((openDrawer) => !openDrawer);
+  };
+
   return (
     <div className={classes.headerContainer}>
       <div className={classes.headerContent}>
@@ -37,11 +41,11 @@ function HeaderComponent(props) {
       <div className={classes.headerContent}>
         <Bookmark
           className={`${classes.menuItem} ${classes.menuIcon}`}
-          onClick={() => setOpenDrawer(!openDrawer)}
+          onClick={openBookMarkDrawer}
         />
         <Logout className={classes.menuIcon} onClick={handleLogout} />
       </div>
-      {openDrawer && <BookmarkComponent setOpenDrawer={setOpenDrawer}/>}
+      {openDrawer && <BookmarkComponent setOpenDrawer={setOpenDrawer} />}
     </div>
   );
 }
