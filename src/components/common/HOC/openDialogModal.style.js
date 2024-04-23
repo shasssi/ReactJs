@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     left: "50%",
     background: "white",
     width: "500px",
+    borderRadius: theme.spacing(0.5),
     "&:focus-visible": {
       outline: "none !important",
     },

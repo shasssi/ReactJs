@@ -28,7 +28,7 @@ export const routerElementData = [
         content: (
           <span>
             React Element &#x2192; is an object &#x2192; which gets converted to
-            HTML Elemet <b>(ReactDOM render)</b>.
+            HTML Element <b>(ReactDOM render)</b>.
           </span>
         ),
       },
@@ -124,7 +124,7 @@ export const jsxBabelData = [
             We use Babel with React to transpile the JSX code into simple React
             functions (React.createElement) &#x2192; It gets converted to React
             Element &#x2192; JS Object &#x2192; which gets converted to HTML
-            Elemet (ReactDOM render).
+            Element (ReactDOM render).
           </span>
         ),
       },
@@ -143,7 +143,7 @@ export const jsxBabelData = [
           <span>
             <b>
               JSX is faster than normal Javascript code as it gets
-              transpiled/coverted into an optimized code before reaching to JS
+              transpiled/converted into an optimized code before reaching to JS
               Engine
             </b>
             .

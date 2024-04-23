@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -7,21 +8,27 @@ import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import useStyles from "./CardComponent.style";
+import { addNavigation } from "../../../redux/slice/navigationSlice";
 
 const CardComponent = (props) => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { data } = props;
 
-  const handleClick = (componentName) => {
-    navigate(`/react/${componentName}`);
+  const handleClick = (item) => {
+    navigate(`/react/${item?.componentName}`);
+    dispatch(
+      addNavigation({
+        page: item?.componentName,
+        image: item?.image,
+        id: item?.id,
+      })
+    );
   };
 
   return (
-    <Card
-      className={classes.cardContainer}
-      onClick={() => handleClick(data?.componentName)}
-    >
+    <Card className={classes.cardContainer} onClick={() => handleClick(data)}>
       <CardMedia
         className={classes.cardImage}
         image={`../../../assets/images/${data?.image}`}
@@ -31,7 +38,6 @@ const CardComponent = (props) => {
         {data?.name && (
           <Button
             variant="outlined"
-            onClick={() => handleClick(data?.componentName)}
             className={classes.button}
             color="secondary"
           >
