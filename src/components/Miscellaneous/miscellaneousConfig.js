@@ -140,7 +140,7 @@ export const memoData = [
         content: (
           <span>
             &#x25CF; Below code &#x2192; Here in parent component &#x2192; if
-            the Increase count button is click &#x2192; the count state gets
+            the Increase count button is clicked &#x2192; the count state gets
             updated &#x2192; then parent component will get re-rendered.
           </span>
         ),
