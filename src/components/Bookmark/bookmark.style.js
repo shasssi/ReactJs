@@ -16,17 +16,26 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     paddingBottom: theme.spacing(1),
     overflow: "scroll",
+    [theme.breakpoints.down("md")]: {
+      width: "100px",
+    },
   },
   image: {
     height: "100px",
     borderRadius: theme.spacing(0.5),
     cursor: "pointer",
     marginBottom: theme.spacing(1),
+    [theme.breakpoints.down("md")]: {
+      height: "50px",
+    },
   },
   noContent: {
     marginTop: theme.spacing(1),
     fontSize: theme.spacing(2),
     color: "grey",
+    [theme.breakpoints.down("md")]: {
+      fontSize: theme.spacing(1.5),
+    },
   },
 }));
 
