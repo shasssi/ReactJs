@@ -24,13 +24,22 @@ const LazyComponent = lazy(() =>
   import("../Lazy/LazyComponent" /* webpackChunkName: "lazyComponent" */)
 );
 const BundlersComponent = lazy(() =>
-  import("../Bundlers/BundleComponent" /* webpackChunkName: "bundleComponent" */)
+  import(
+    "../Bundlers/BundleComponent" /* webpackChunkName: "bundleComponent" */
+  )
 );
 const ReactHooksComponent = lazy(() =>
-  import("../Hooks/ReactHooksComponent" /* webpackChunkName: "hooksComponent" */)
+  import(
+    "../Hooks/ReactHooksComponent" /* webpackChunkName: "hooksComponent" */
+  )
 );
 const MiscellaneousComponent = lazy(() =>
-  import("../Miscellaneous/MiscellaneousComponent" /* webpackChunkName: "miscellaneousComponent" */)
+  import(
+    "../Miscellaneous/MiscellaneousComponent" /* webpackChunkName: "miscellaneousComponent" */
+  )
+);
+const ReduxComponent = lazy(() =>
+  import("../Redux/ReduxComponent" /* webpackChunkName: "reduxComponent" */)
 );
 
 export const componentsConfig = {
@@ -42,4 +51,5 @@ export const componentsConfig = {
   bundlers: BundlersComponent,
   hooks: ReactHooksComponent,
   miscellaneous: MiscellaneousComponent,
+  redux: ReduxComponent,
 };
