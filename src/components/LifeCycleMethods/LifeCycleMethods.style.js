@@ -9,8 +9,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   image: {
-    overflow: 'scroll'
-  }
+    overflow: "scroll",
+  },
+  reduxImage: {
+    overflow: "scroll",
+    width: "600px",
+    [theme.breakpoints.down("md")]: {
+      width: "330px",
+    },
+  },
 }));
 
 export default useStyles;

@@ -45,7 +45,7 @@
   {
     "id": 6,
     "name": "Redux",
-    "componentName": "lifeCycle",
+    "componentName": "redux",
     "image": "redux.png",
     "contents": ["Store", "Action, Reducer", "Middleware"]
   },
