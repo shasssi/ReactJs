@@ -12,6 +12,7 @@ import {
   sliceHeading,
   useSelectorCode,
   useSelectorHeading,
+  benefits,
 } from "./reduxConfig";
 import ReduxArchitecture from "../../assets/images/redux_architecture.jpeg";
 
@@ -38,6 +39,7 @@ function ReduxComponent(props) {
       <PreFormatComponent data={sliceCode} />
       {renderContentListData(useSelectorHeading)}
       <PreFormatComponent data={useSelectorCode} />
+      {renderContentListData(benefits)}
     </div>
   );
 }
