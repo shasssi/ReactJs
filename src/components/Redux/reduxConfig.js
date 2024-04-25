@@ -6,7 +6,8 @@ export const reduxDefData = [
     mainContent: (
       <span>
         <b>Redux</b> &#x2192; is an open source Javascript library for managing
-        and centralizing appication state.
+        and centralizing appication state. <b>Alternate of Redux</b> &#x2192; MobX,
+        Recoil, Zustand, Rematch, Vuex, Jotai, Valtio, RxJS
       </span>
     ),
     subContent: [
@@ -218,3 +219,58 @@ export default function BookmarkComponent() {
     </div>
   );
 }`;
+
+export const benefits = [
+  {
+    id: 1,
+    mainContent: (
+      <span>
+        <b>Benefits of using Redux</b>
+      </span>
+    ),
+    subContent: [
+      {
+        id: 11,
+        content: <span>&#x2192; It is useful for Large application</span>,
+      },
+      {
+        id: 12,
+        content: (
+          <span>&#x2192; It is an external library not inside React.</span>
+        ),
+      },
+      {
+        id: 13,
+        content: <span>&#x2192; It is highly maintaiable, more scalable.</span>,
+      },
+      {
+        id: 14,
+        content: <span>&#x2192; It offers middlewares.</span>,
+      },
+      {
+        id: 15,
+        content: <span>&#x2192; It prevents re-rendering.</span>,
+      },
+      {
+        id: 16,
+        content: (
+          <span>&#x2192; It is easy to test and makes debugger easier.</span>
+        ),
+      },
+      {
+        id: 17,
+        content: <span>&#x2192; It is useful in server side renering.</span>,
+      },
+      {
+        id: 17,
+        content: (
+          <span>
+            &#x2192; <b>context API provided by React</b> can be used for small
+            application. Lot many context we have to create which becomes more
+            complex to handle.
+          </span>
+        ),
+      },
+    ],
+  },
+];

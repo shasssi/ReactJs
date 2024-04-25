@@ -6,3 +6,10 @@
 6. npm run start
 7. npm run build
 8. npm install --save-dev style-loader css-loader
+
+- refer another useRef scenarion in bookmark component.
+
+- issue 1. toggle is not working for bookmark
+
+- webpack error MIME type ('text/html') is not executable,
+- to fix this error -> publicPath added in output obj webpack config
