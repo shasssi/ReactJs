@@ -62,7 +62,7 @@ export const oldReconciler = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     mainContent: (
       <span>
         <b>Reconciliation</b> &#x2192; It a process to keep the UI sync with
@@ -82,7 +82,7 @@ export const oldReconciler = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     mainContent: (
       <span>
         <b>Virtual DOM</b> &#x2192; Representation of Actual DOM &#x2192;

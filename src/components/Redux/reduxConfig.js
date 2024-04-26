@@ -262,7 +262,7 @@ export const benefits = [
         content: <span>&#x2192; It is useful in server side renering.</span>,
       },
       {
-        id: 17,
+        id: 18,
         content: (
           <span>
             &#x2192; <b>context API provided by React</b> can be used for small

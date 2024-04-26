@@ -56,5 +56,6 @@ export const componentsConfig = {
   bundlers: BundlersComponent,
   hooks: ReactHooksComponent,
   miscellaneous: MiscellaneousComponent,
+  redux: ReduxComponent,
   basics: ReactBasicComponent,
 };
