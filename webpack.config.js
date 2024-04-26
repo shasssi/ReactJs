@@ -6,7 +6,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, "/build"),
     filename: "bundle.js",
-    publicPath: '/' /* added public path to fix the page refresh issue for lazy loaded componenet */
+    publicPath:
+      "/" /* added public path to fix the page refresh issue for lazy loaded componenet */,
   },
   module: {
     rules: [
@@ -39,6 +40,7 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: "./public/index.html",
+      favicon: "./public/favicon.webp",
     }),
     new CopyPlugin({
       patterns: [{ from: "src/assets", to: "assets", toType: "dir" }],

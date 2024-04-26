@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
+    "name": "React Basics",
+    "componentName": "basics",
+    "image": "reactBasics.jpeg",
+    "contents": ["Reconciliation", "VirtualDOM", "ReactDOM Renderer"]
+  },
+  {
+    "id": 2,
     "name": "React Lifecycle",
     "componentName": "lifeCycle",
     "image": "lifeCycleMethods.jpeg",
     "contents": ["Mount", "Update", "Unmount"]
-  },
-  {
-    "id": 2,
-    "name": "React Basics",
-    "componentName": "lifeCycle",
-    "image": "reactBasics.jpeg",
-    "contents": ["Reconciliation", "VirtualDOM", "ReactDOM Renderer"]
   },
   {
     "id": 3,
@@ -26,6 +26,13 @@
   },
   {
     "id": 4,
+    "name": "JSX",
+    "componentName": "jsx",
+    "image": "jsx.png",
+    "contents": ["React Element", "Babel"]
+  },
+  {
+    "id": 5,
     "name": "React Hooks",
     "componentName": "hooks",
     "image": "reactHooks.png",
@@ -36,45 +43,38 @@
     ]
   },
   {
-    "id": 5,
+    "id": 6,
+    "name": "Miscellaneous",
+    "componentName": "miscellaneous",
+    "image": "reactMemo.webp",
+    "contents": ["React Memo", "Higher Order Component"]
+  },
+  {
+    "id": 7,
     "name": "React Lazy Loading",
     "componentName": "lazy",
     "image": "lazyLoading.jpeg",
     "contents": ["Lazy Loading", "React Suspense"]
   },
   {
-    "id": 6,
-    "name": "Redux",
-    "componentName": "redux",
-    "image": "redux.png",
-    "contents": ["Store", "Action, Reducer", "Middleware"]
-  },
-  {
-    "id": 7,
+    "id": 8,
     "name": "React Router",
     "componentName": "router",
     "image": "reactRouter.png",
     "contents": ["BrowserRouter, Routes, Route", "Outlet, Link"]
   },
   {
-    "id": 8,
-    "name": "JSX",
-    "componentName": "jsx",
-    "image": "jsx.png",
-    "contents": ["React Element", "Babel"]
+    "id": 9,
+    "name": "Redux",
+    "componentName": "redux",
+    "image": "redux.png",
+    "contents": ["Store", "Action, Reducer", "Middleware"]
   },
   {
-    "id": 9,
+    "id": 10,
     "name": "Webpack",
     "componentName": "bundlers",
     "image": "webpack.png",
     "contents": ["Create React App", "Babel-Loader", "CSS-Loader, Image-Loader"]
-  },
-  {
-    "id": 10,
-    "name": "Miscellaneous",
-    "componentName": "miscellaneous",
-    "image": "reactMemo.webp",
-    "contents": ["React Memo", "Higher Order Component"]
   }
 ]
