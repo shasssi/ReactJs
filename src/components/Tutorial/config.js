@@ -41,6 +41,11 @@ const MiscellaneousComponent = lazy(() =>
 const ReduxComponent = lazy(() =>
   import("../Redux/ReduxComponent" /* webpackChunkName: "reduxComponent" */)
 );
+const ReactBasicComponent = lazy(() =>
+  import(
+    "../Basics/ReactBasicComponent" /* webpackChunkName: "reactBasicComponent" */
+  )
+);
 
 export const componentsConfig = {
   lifeCycle: LifeCycleMethodsComponent,
@@ -51,5 +56,5 @@ export const componentsConfig = {
   bundlers: BundlersComponent,
   hooks: ReactHooksComponent,
   miscellaneous: MiscellaneousComponent,
-  redux: ReduxComponent,
+  basics: ReactBasicComponent,
 };
