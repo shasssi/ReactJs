@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -14,7 +14,12 @@ const CardComponent = (props) => {
   const classes = useStyles();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const scrollPosition = useSelector((store) => store?.scroll);
   const { data } = props;
+
+  useEffect(() => {
+    window.scroll(scrollPosition?.x, scrollPosition?.y);
+  }, []);
 
   const handleClick = (item) => {
     navigate(`/react/${item?.componentName}`);

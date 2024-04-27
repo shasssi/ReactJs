@@ -1,15 +1,31 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import Grid from "@mui/material/Grid";
 import CardComponent from "../common/Card/CardComponent";
 import useStyles from "./DashboardComponent.style";
+import { updateScollPosition } from "../../redux/slice/scrollSlice";
 
 const DashboardComponet = () => {
   const classes = useStyles();
   const [topicsData, setTopicsData] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     loadTopicsData();
+    window.addEventListener("scroll", scrollFn);
+    return () => {
+      window.removeEventListener("scroll", scrollFn);
+    };
   }, []);
+
+  const scrollFn = () => {
+    dispatch(
+      updateScollPosition({
+        x: window.scrollX,
+        y: window.scrollY,
+      })
+    );
+  };
 
   const loadTopicsData = async () => {
     const data = await import("../../assets/data/topics.json");
