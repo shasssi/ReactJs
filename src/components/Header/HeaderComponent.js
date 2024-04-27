@@ -1,5 +1,6 @@
 import React, { memo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import Typography from "@mui/material/Typography";
 import Home from "@mui/icons-material/Home";
 import ArrowBack from "@mui/icons-material/ArrowBack";
@@ -9,11 +10,13 @@ import useStyles from "./HeaderComponent.styles";
 import dialogModalHOC from "../common/HOC/openDialogModal";
 import { LOGOUT_CONTENT_TEXT, LOGOUT_HEADER_TEXT } from "../constant";
 import BookmarkComponent from "../Bookmark/BookmarkComponent";
+import { resetScollPosition } from "../../redux/slice/scrollSlice";
 
 function HeaderComponent(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
   const classes = useStyles();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { openDialogModal } = props;
 
   const handleLogout = () => {
@@ -28,13 +31,23 @@ function HeaderComponent(props) {
     setOpenDrawer((openDrawer) => !openDrawer);
   };
 
+  const handleHomeBtnFn = () => {
+    navigate("/");
+    window.scroll(0, 0);
+    dispatch(resetScollPosition());
+  };
+
+  const handleBackArrowFn = () => {
+    navigate("/");
+  };
+
   return (
     <div className={classes.headerContainer}>
       <div className={classes.headerContent}>
-        <Typography className={classes.menuItem} onClick={() => navigate("/")}>
+        <Typography className={classes.menuItem} onClick={handleHomeBtnFn}>
           <Home className={classes.menuIcon} />
         </Typography>
-        <Typography className={classes.menuItem} onClick={() => navigate("/")}>
+        <Typography className={classes.menuItem} onClick={handleBackArrowFn}>
           <ArrowBack className={classes.menuIcon} />
         </Typography>
       </div>
