@@ -17,13 +17,18 @@ function HeaderComponent(props) {
   const classes = useStyles();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { openDialogModal } = props;
+  const { openDialogModal, closeDialogModal } = props;
 
   const handleLogout = () => {
     openDialogModal({
       open: true,
       header: LOGOUT_HEADER_TEXT,
       content: LOGOUT_CONTENT_TEXT,
+      handleConfirm: () => {
+        window.localStorage.clear();
+        closeDialogModal();
+        navigate("/login");
+      },
     });
   };
 

@@ -19,9 +19,14 @@ const dialogModalHOC = (Component) => {
       setModalData(data);
     };
 
+    const { handleConfirm = () => {} } = modalData;
+
     return (
       <Fragment>
-        <Component openDialogModal={openDialogModal} />
+        <Component
+          openDialogModal={openDialogModal}
+          closeDialogModal={handleClose}
+        />
         {modalData?.open && (
           <Modal
             open={modalData.open}
@@ -51,7 +56,7 @@ const dialogModalHOC = (Component) => {
                 <Button
                   className={classes.button}
                   variant="contained"
-                  onClick={handleClose}
+                  onClick={handleConfirm}
                 >
                   Ok
                 </Button>
