@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import LoginImg from "./../../assets/images/login.jpeg";
-import useStyles from "./Login.style";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   FormControl,
@@ -11,13 +11,15 @@ import {
   TextField,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom";
+import LoginImg from "./../../assets/images/login.jpeg";
+import useStyles from "./Login.style";
 import { validateForm } from "./validate";
-import { userSignIn, userSignUp } from "../../api/login";
+import { signIn, signUp } from "../../redux/slice/user";
 
 function LoginForm({ formikState }) {
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const {
     values,
@@ -27,6 +29,7 @@ function LoginForm({ formikState }) {
     setFieldTouched,
     setErrors,
     setTouched,
+    setValues,
   } = formikState;
   const classes = useStyles();
 
@@ -41,23 +44,36 @@ function LoginForm({ formikState }) {
     setFieldTouched(fieldName, false);
   };
 
+  const clearFieldValues = () => {
+    isSignUp && setFieldValue("name", "");
+    setFieldValue("email", "");
+    setFieldValue("password", "");
+    isSignUp && setFieldValue("confirmPassword", "");
+  };
+
+  const onSubmitFieldValidation = (values) => {
+    setErrors(validateForm(values));
+    isSignUp && setFieldTouched("name", false);
+    setFieldTouched("email", false);
+    setFieldTouched("password", false);
+    isSignUp && setFieldTouched("confirmPassword", false);
+  };
+
   const handleSignIn = async () => {
     const { email, password } = errors;
     const isError = !!email || !!password;
     const isValue = values?.email && values?.password;
     if (!isError && isValue) {
-      const response = await userSignIn({
-        email: values?.email,
-        password: values?.password,
-      });
-      if (response?.id) {
+      const response = await dispatch(
+        signIn({ email: values?.email, password: values?.password })
+      );
+      if (response?.payload?.id) {
         navigate("/");
+      } else {
+        clearFieldValues();
       }
-      return;
     }
-    setErrors(validateForm(values));
-    setFieldTouched("email", false);
-    setFieldTouched("password", false);
+    onSubmitFieldValidation(values);
   };
 
   const handleSignUp = async () => {
@@ -69,19 +85,20 @@ function LoginForm({ formikState }) {
       values?.password &&
       values?.confirmPassword;
     if (!isError && isValue) {
-      await userSignUp({
-        name: values?.name,
-        email: values?.email,
-        password: values?.password,
-      });
-      navigate("/");
-      return;
+      const response = await dispatch(
+        signUp({
+          name: values?.name,
+          email: values?.email,
+          password: values?.password,
+        })
+      );
+      if (response?.payload?.id) {
+        navigate("/");
+      } else {
+        clearFieldValues();
+      }
     }
-    setErrors(validateForm(values));
-    setFieldTouched("name", false);
-    setFieldTouched("email", false);
-    setFieldTouched("password", false);
-    setFieldTouched("confirmPassword", false);
+    onSubmitFieldValidation(values);
   };
 
   return (

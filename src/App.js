@@ -8,7 +8,7 @@ import {
   Route,
 } from "react-router-dom";
 import DashboardComponet from "./components/Dashboard/DashboardComponet";
-import SkeletonComponent from "./components/common/Skeleton/SkeletonComponent";
+import SkeletonComponent from "./common/Skeleton/SkeletonComponent";
 import PrivateRoute from "./PrivateRoute";
 import appStore from "./redux/store";
 import LoginComponent from "./components/Login/LoginComponent";

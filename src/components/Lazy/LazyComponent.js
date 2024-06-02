@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import useStyles from "../LifeCycleMethods/LifeCycleMethods.style";
-import PreFormatComponent from "../common/PreFormat/PreFormatComponent";
+import PreFormatComponent from "../../common/PreFormat/PreFormatComponent";
 import { renderContentListData } from "../utilityComponent";
 import {
   lazyLoadinData,

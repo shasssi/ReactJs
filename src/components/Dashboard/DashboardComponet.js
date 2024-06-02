@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Grid from "@mui/material/Grid";
-import CardComponent from "../common/Card/CardComponent";
+import CardComponent from "../../common/Card/CardComponent";
 import useStyles from "./DashboardComponent.style";
 import { updateScollPosition } from "../../redux/slice/scrollSlice";
 

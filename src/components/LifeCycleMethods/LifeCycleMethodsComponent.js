@@ -1,12 +1,12 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import PreFormatComponent from "../common/PreFormat/PreFormatComponent";
+import PreFormatComponent from "../../common/PreFormat/PreFormatComponent";
 import {
   functionalComponentCode,
   functionalComponentLifeCycleData,
 } from "./functionalConfig";
 import { classComponentCode, classComponentLifeCycleData } from "./classConfig";
-import ContentComponent from "../common/Content/ContentComponent";
+import ContentComponent from "../../common/Content/ContentComponent";
 import useStyles from "./LifeCycleMethods.style";
 import LifeCycleImage from "../../assets/images/lifecycle-diagram.png";
 import { renderContentListData } from "../utilityComponent";
