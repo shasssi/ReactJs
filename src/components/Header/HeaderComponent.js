@@ -7,23 +7,29 @@ import ArrowBack from "@mui/icons-material/ArrowBack";
 import Logout from "@mui/icons-material/Logout";
 import Bookmark from "@mui/icons-material/Bookmark";
 import useStyles from "./HeaderComponent.styles";
-import dialogModalHOC from "../common/HOC/openDialogModal";
+import dialogModalHOC from "../../common/HOC/openDialogModal";
 import { LOGOUT_CONTENT_TEXT, LOGOUT_HEADER_TEXT } from "../constant";
 import BookmarkComponent from "../Bookmark/BookmarkComponent";
 import { resetScollPosition } from "../../redux/slice/scrollSlice";
+import { logout } from "../../redux/slice/user";
 
 function HeaderComponent(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
-  const classes = useStyles();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { openDialogModal } = props;
+  const classes = useStyles();
+  const { openDialogModal, closeDialogModal } = props;
 
   const handleLogout = () => {
     openDialogModal({
       open: true,
       header: LOGOUT_HEADER_TEXT,
       content: LOGOUT_CONTENT_TEXT,
+      handleConfirm: () => {
+        dispatch(logout())
+        closeDialogModal();
+        navigate("/login");
+      },
     });
   };
 

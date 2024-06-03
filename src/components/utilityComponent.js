@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import ContentComponent from "./common/Content/ContentComponent";
+import ContentComponent from "../common/Content/ContentComponent";
 
 export const renderContentComponent = (configData, isChild = false) => {
   const {

@@ -9,6 +9,7 @@ const scrollSlice = createSlice({
       state.y = action?.payload?.y;
     },
     resetScollPosition: (state, action) => {
+      console.log("resetScollPosition state", state);
       state.x = 0;
       state.y = 0;
     },

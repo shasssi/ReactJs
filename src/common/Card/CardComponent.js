@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import useStyles from "./CardComponent.style";
-import { addNavigation } from "../../../redux/slice/navigationSlice";
+import { addNavigation } from "../../redux/slice/navigationSlice";
 
 const CardComponent = (props) => {
   const classes = useStyles();

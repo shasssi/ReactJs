@@ -1,10 +1,17 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import createTheme from "@mui/material/styles/createTheme";
-import HeaderComponent from "./components/Header/HeaderComponent";
-import { Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import DashboardComponet from "./components/Dashboard/DashboardComponet";
+import SkeletonComponent from "./common/Skeleton/SkeletonComponent";
+import PrivateRoute from "./PrivateRoute";
 import appStore from "./redux/store";
+import LoginComponent from "./components/Login/LoginComponent";
 
 const theme = createTheme({
   typography: {
@@ -21,12 +28,33 @@ const theme = createTheme({
   },
 });
 
+const TutorialComponent = lazy(() =>
+  import(
+    "../src/components/Tutorial/TutorialComponent" /* webpackChunkName: "tutorialComponent" */
+  )
+);
+
 function App() {
   return (
     <Provider store={appStore}>
       <ThemeProvider theme={theme}>
-        <HeaderComponent />
-        <Outlet />
+        <BrowserRouter>
+          <Routes>
+            <Route element={<PrivateRoute />}>
+              <Route path="/" element={<DashboardComponet />} />
+              <Route
+                path="/react/:topics"
+                element={
+                  <Suspense fallback={<SkeletonComponent />}>
+                    <TutorialComponent />
+                  </Suspense>
+                }
+              />
+              <Route path="/testroute" element={<SkeletonComponent />} />
+            </Route>
+            <Route path="/login" element={<LoginComponent />} />
+          </Routes>
+        </BrowserRouter>
       </ThemeProvider>
     </Provider>
   );

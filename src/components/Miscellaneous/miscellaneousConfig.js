@@ -66,7 +66,7 @@ export default dialogModalHOC;`;
 
 export const componentCode = `import React from "react";
 import Logout from "@mui/icons-material/Logout";
-import dialogModalHOC from "../common/HOC/openDialogModal";
+import dialogModalHOC from "../../common/HOC/openDialogModal";
 import { LOGOUT_CONTENT_TEXT, LOGOUT_HEADER_TEXT } from "../constant";
 
 function HeaderComponent(props) {

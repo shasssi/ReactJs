@@ -9,7 +9,7 @@ import {
   classComponentData,
 } from "../LifeCycleMethods/classConfig";
 import useStyles from "../LifeCycleMethods/LifeCycleMethods.style";
-import PreFormatComponent from "../common/PreFormat/PreFormatComponent";
+import PreFormatComponent from "../../common/PreFormat/PreFormatComponent";
 import { renderContentListData } from "../utilityComponent";
 
 function ReactComponents(props) {
