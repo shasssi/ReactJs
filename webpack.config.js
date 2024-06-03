@@ -47,6 +47,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: "src/assets", to: "assets", toType: "dir" }],
     }),
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true, // FIX - Issue while picking env var used as process.env in production 
+    }),
   ],
 };
