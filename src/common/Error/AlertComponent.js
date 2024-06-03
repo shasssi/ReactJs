@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Alert } from "@mui/material";
-import useStyles from "./error.Style";
+import useStyles from "./error.style";
 import { resetError } from "../../redux/slice/user";
 
 function AlertComponent() {
