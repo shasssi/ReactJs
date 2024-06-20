@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "30px",
     width: "100%",
     gap: "16px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "48px 16px"
+    },
   },
   header: {
     color: "rgb(255, 255, 255)",
