@@ -11,6 +11,11 @@ const userSlice = createSlice({
     isError: false,
     errMsg: "",
     user: {},
+    toast: {
+      open: false,
+      msg: "",
+      type: "success",
+    },
   },
   reducers: {
     logout: (state, action) => {
@@ -22,6 +27,13 @@ const userSlice = createSlice({
     resetError: (state) => {
       state.isError = false;
       state.errMsg = "";
+    },
+    resetToast: (state) => {
+      state.toast = {
+        open: false,
+        msg: "",
+        type: "success",
+      };
     },
   },
   extraReducers: (builder) => {
@@ -48,11 +60,15 @@ const userSlice = createSlice({
     builder.addCase(signUp.fulfilled, (state, action) => {
       const response = action?.payload;
       state.isLoading = false;
-      state.isError = response?.isError;
       if (response?.isError) {
+        state.isError = response?.isError;
         state.errMsg = response?.errMsg || response?.code;
-      } else {
-        state.user = response;
+      } else if (response?.data) {
+        state.toast = {
+          open: true,
+          msg: response?.data,
+          type: "success",
+        };
       }
     });
     builder.addCase(signUp.rejected, (state, action) => {
@@ -62,6 +78,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { logout, resetError } = userSlice.actions;
+export const { logout, resetError, resetToast } = userSlice.actions;
 
 export default userSlice.reducer;
