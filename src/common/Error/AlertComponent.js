@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Alert } from "@mui/material";
 import useStyles from "./error.style";
-import { resetError } from "../../redux/slice/user";
+import { resetError, resetToast } from "../../redux/slice/user";
 
 function AlertComponent() {
   const classes = useStyles();
@@ -10,6 +10,7 @@ function AlertComponent() {
   const dispatch = useDispatch();
   const isError = state?.isError;
   const errorMsg = state?.errMsg;
+  const toast = state?.toast;
   return (
     <>
       {isError && (
@@ -20,6 +21,16 @@ function AlertComponent() {
           onClose={() => dispatch(resetError())}
         >
           {errorMsg}
+        </Alert>
+      )}
+      {toast?.open && (
+        <Alert
+          className={classes.alertContainer}
+          variant="filled"
+          severity={toast?.type}
+          onClose={() => dispatch(resetToast())}
+        >
+          {toast?.msg}
         </Alert>
       )}
     </>

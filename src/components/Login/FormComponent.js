@@ -44,11 +44,15 @@ function LoginForm({ formikState }) {
     setFieldTouched(fieldName, false);
   };
 
-  const clearFieldValues = () => {
-    isSignUp && setFieldValue("name", "");
+  const clearSignInFieldValues = () => {
     setFieldValue("email", "");
     setFieldValue("password", "");
-    isSignUp && setFieldValue("confirmPassword", "");
+  };
+
+  const clearSignUpFieldValues = () => {
+    setFieldValue("name", "");
+    setFieldValue("confirmPassword", "");
+    clearSignInFieldValues();
   };
 
   const onSubmitFieldValidation = (values) => {
@@ -70,7 +74,7 @@ function LoginForm({ formikState }) {
       if (response?.payload?.id) {
         navigate("/");
       } else {
-        clearFieldValues();
+        clearSignInFieldValues();
       }
     }
     onSubmitFieldValidation(values);
@@ -92,11 +96,9 @@ function LoginForm({ formikState }) {
           password: values?.password,
         })
       );
-      if (response?.payload?.id) {
-        navigate("/");
-      } else {
-        clearFieldValues();
-      }
+      clearSignInFieldValues();
+      setTouched({});
+      setIsSignUp(false);
     }
     onSubmitFieldValidation(values);
   };
@@ -227,6 +229,7 @@ function LoginForm({ formikState }) {
               <Button
                 variant="contained"
                 onClick={() => {
+                  clearSignInFieldValues();
                   setTouched({});
                   setIsSignUp(false);
                 }}
@@ -239,6 +242,7 @@ function LoginForm({ formikState }) {
               <Button
                 variant="contained"
                 onClick={() => {
+                  clearSignUpFieldValues()
                   setTouched({});
                   setIsSignUp(true);
                 }}
