@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     gap: "16px",
     [theme.breakpoints.down("sm")]: {
-      padding: "48px 16px"
+      padding: "48px 16px",
     },
   },
   header: {
@@ -46,6 +46,10 @@ const useStyles = makeStyles((theme) => ({
   input: {
     background: "rgba(22, 22, 22, 0.7)",
     color: "white",
+    "& :-webkit-autofill": {
+      "-webkit-text-fill-color": "white !important",
+      "-webkit-background-clip": "text !important",
+    },
     "& label": {
       fontSize: "1rem",
       fontWeight: "400",
