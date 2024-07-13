@@ -1,4 +1,5 @@
 import axios from "axios";
+import { TOKEN_KEY } from "../common/constants";
 
 export const setupAPIInterceptors = () => {
   //   axios.defaults.timeout = "";
@@ -10,7 +11,8 @@ export const setupAPIInterceptors = () => {
   };
   axios.interceptors.request.use(
     (req) => {
-      // TODO - add token to request header
+      // Add Token to request header
+      req.headers.set("Authorization", window.localStorage.getItem(TOKEN_KEY));
       return req;
     },
     (err) => {
