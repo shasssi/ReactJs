@@ -81,6 +81,28 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "none !important",
     fontSize: "1rem !important",
   },
+  uploadButton: {
+    width: "100%",
+    padding: `${theme.spacing(1)} !important`,
+    backgroundColor: "#009688 !important",
+    textTransform: "none !important",
+    fontSize: "1rem !important",
+  },
+  uploadCancel: {
+    marginTop: theme.spacing(1),
+    color: "white",
+    cursor: "pointer",
+  },
+  uploadErroCancel: {
+    paddingTop: theme.spacing(0),
+    color: "white",
+    cursor: "pointer",
+  },
+  uploadFileText: {
+    marginBottom: theme.spacing(0),
+    color: "#009688",
+    overflow: "hidden",
+  },
   signUpButton: {
     padding: `${theme.spacing(1.5)} !important`,
     backgroundColor: "#955ae7 !important",

@@ -47,7 +47,12 @@ const userSlice = createSlice({
       if (response?.isError) {
         state.errMsg = response?.errMsg || response?.code;
       } else {
-        state.user = response;
+        state.user = {
+          id: response?.id,
+          name: response?.name,
+          email: response?.email,
+          profileImg: response?.profileImg,
+        };
       }
     });
     builder.addCase(signIn.rejected, (state, action) => {

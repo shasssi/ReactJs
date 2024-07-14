@@ -4,13 +4,19 @@ import { useNavigate } from "react-router-dom";
 import {
   Button,
   FormControl,
+  Grid,
   IconButton,
   Input,
   InputAdornment,
   InputLabel,
   TextField,
 } from "@mui/material";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import {
+  Cancel,
+  FileUploadSharp,
+  Visibility,
+  VisibilityOff,
+} from "@mui/icons-material";
 import LoginImg from "./../../assets/images/login.jpeg";
 import useStyles from "./Login.style";
 import { validateForm } from "./validate";
@@ -19,6 +25,8 @@ import { signIn, signUp } from "../../redux/slice/user";
 function LoginForm({ formikState }) {
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
+  const [fileData, setFileData] = useState({});
+  const [fileError, setFileError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const {
@@ -52,6 +60,8 @@ function LoginForm({ formikState }) {
   const clearSignUpFieldValues = () => {
     setFieldValue("name", "");
     setFieldValue("confirmPassword", "");
+    setFileData({});
+    setFileError("");
     clearSignInFieldValues();
   };
 
@@ -82,25 +92,39 @@ function LoginForm({ formikState }) {
 
   const handleSignUp = async () => {
     const { name, email, password, confirmPassword } = errors;
-    const isError = !!name || !!email || !!password || !!confirmPassword;
+    const isError =
+      !!name || !!email || !!password || !!confirmPassword || !!fileError;
     const isValue =
       values?.name &&
       values?.email &&
       values?.password &&
       values?.confirmPassword;
     if (!isError && isValue) {
-      const response = await dispatch(
-        signUp({
-          name: values?.name,
-          email: values?.email,
-          password: values?.password,
-        })
-      );
+      const formData = new FormData();
+      formData.append("profileImg", fileData);
+      formData.append("name", values?.name);
+      formData.append("email", values?.email);
+      formData.append("password", values?.password);
+      const response = await dispatch(signUp(formData));
       clearSignInFieldValues();
       setTouched({});
       setIsSignUp(false);
     }
     onSubmitFieldValidation(values);
+  };
+
+  const onFileChange = (e) => {
+    const file = e?.target?.files[0];
+    const regex = new RegExp(
+      /[^\s]+(.*?).(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$/
+    );
+    if (regex.test(file?.name)) {
+      setFileData(file);
+      setFileError("");
+    } else {
+      setFileData({});
+      setFileError("Supported format: jpg | jpeg | png | gif");
+    }
   };
 
   return (
@@ -204,6 +228,48 @@ function LoginForm({ formikState }) {
                     touched.confirmPassword === false &&
                     errors.confirmPassword}
                 </p>
+                <Grid container marginBottom={2}>
+                  <Grid item xs={12}>
+                    <Button
+                      variant="contained"
+                      className={classes.uploadButton}
+                      component="label"
+                    >
+                      <FileUploadSharp /> Profile Image
+                      <input type="file" onChange={onFileChange} hidden />
+                    </Button>
+                  </Grid>
+                  {fileData?.name && (
+                    <Grid container spacing={2}>
+                      <Grid item xs={10}>
+                        <p className={classes.uploadFileText}>
+                          {fileData?.name}
+                        </p>
+                      </Grid>
+                      <Grid item xs={2}>
+                        <Cancel
+                          className={classes.uploadCancel}
+                          onClick={() => setFileData({})}
+                        />
+                      </Grid>
+                    </Grid>
+                  )}
+                </Grid>
+                {!!fileError && (
+                  <Grid container spacing={2}>
+                    <Grid item xs={10}>
+                      <p className={classes.errorText}>
+                        {!!fileError && fileError}
+                      </p>
+                    </Grid>
+                    <Grid item xs={2} padding={0}>
+                      <Cancel
+                        className={classes.uploadErroCancel}
+                        onClick={() => setFileError("")}
+                      />
+                    </Grid>
+                  </Grid>
+                )}
               </>
             )}
             {!isSignUp && (
@@ -242,7 +308,7 @@ function LoginForm({ formikState }) {
               <Button
                 variant="contained"
                 onClick={() => {
-                  clearSignUpFieldValues()
+                  clearSignUpFieldValues();
                   setTouched({});
                   setIsSignUp(true);
                 }}

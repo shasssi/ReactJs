@@ -1,6 +1,8 @@
 import axios from "axios";
 import { TOKEN_KEY } from "../common/constants";
 
+const FORM_DATA_ENDPOINT = ["/api/signup"];
+
 export const setupAPIInterceptors = () => {
   //   axios.defaults.timeout = "";
   axios.defaults.baseURL = process.env.API_BASE_URL;
@@ -13,6 +15,9 @@ export const setupAPIInterceptors = () => {
     (req) => {
       // Add Token to request header
       req.headers.set("Authorization", window.localStorage.getItem(TOKEN_KEY));
+      if (FORM_DATA_ENDPOINT.includes(req?.url)) {
+        req.headers["Content-Type"] = "multipart/form-data";
+      }
       return req;
     },
     (err) => {
