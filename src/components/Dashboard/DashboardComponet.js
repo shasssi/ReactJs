@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import CardComponent from "../../common/Card/CardComponent";
 import useStyles from "./DashboardComponent.style";
 import { updateScollPosition } from "../../redux/slice/scrollSlice";
+import { fetchAllTopics } from "../../api/dashboard";
 
 const DashboardComponet = () => {
   const classes = useStyles();
@@ -28,15 +29,15 @@ const DashboardComponet = () => {
   };
 
   const loadTopicsData = async () => {
-    const data = await import("../../assets/data/topics.json");
-    setTopicsData(data?.default);
+    const data = await fetchAllTopics();
+    Array.isArray(data) && setTopicsData(data);
   };
 
   return (
     <Grid container className={classes.dashboardContainer}>
       {Array.isArray(topicsData) &&
         topicsData.map((topicObj) => (
-          <Grid key={topicObj?.id} item className={classes.cardSize}>
+          <Grid key={topicObj?._id} item className={classes.cardSize}>
             <CardComponent data={topicObj} />
           </Grid>
         ))}

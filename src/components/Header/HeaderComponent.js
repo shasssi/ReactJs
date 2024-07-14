@@ -1,6 +1,7 @@
 import React, { memo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import Home from "@mui/icons-material/Home";
 import ArrowBack from "@mui/icons-material/ArrowBack";
@@ -16,9 +17,11 @@ import { logout } from "../../redux/slice/user";
 function HeaderComponent(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
   const navigate = useNavigate();
+  const auth = useSelector((store) => store?.auth);
   const dispatch = useDispatch();
   const classes = useStyles();
   const { openDialogModal, closeDialogModal } = props;
+  const profileImg = auth?.user?.profileImg;
 
   const handleLogout = () => {
     openDialogModal({
@@ -26,7 +29,7 @@ function HeaderComponent(props) {
       header: LOGOUT_HEADER_TEXT,
       content: LOGOUT_CONTENT_TEXT,
       handleConfirm: () => {
-        dispatch(logout())
+        dispatch(logout());
         closeDialogModal();
         navigate("/login");
       },
@@ -58,6 +61,11 @@ function HeaderComponent(props) {
         </Typography>
       </div>
       <div className={classes.headerContent}>
+        <Avatar
+          alt="User Profile"
+          className={classes.menuItem}
+          src={process.env.API_BASE_URL + profileImg}
+        />
         <Bookmark
           className={`${classes.menuItem} ${classes.menuIcon}`}
           onClick={openBookMarkDrawer}

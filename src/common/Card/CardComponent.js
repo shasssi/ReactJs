@@ -27,7 +27,7 @@ const CardComponent = (props) => {
       addNavigation({
         page: item?.componentName,
         image: item?.image,
-        id: item?.id,
+        id: item?._id,
       })
     );
   };

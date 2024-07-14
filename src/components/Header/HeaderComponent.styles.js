@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#5046e5",
     display: "flex",
     padding: `${theme.spacing(1)} ${theme.spacing(9)}`,
+    paddingTop: theme.spacing(0.5),
     justifyContent: "space-between",
     paddingBottom: theme.spacing(0.5),
     [theme.breakpoints.down("md")]: {
@@ -15,10 +16,12 @@ const useStyles = makeStyles((theme) => ({
   headerContent: {
     display: "flex",
     justifyContent: "space-around",
+    alignItems: "center",
   },
   menuItem: {
     marginRight: `${theme.spacing(2)} !important`,
     cursor: "pointer",
+    lineHeight: "0 !important",
   },
   menuIcon: {
     color: "white",
