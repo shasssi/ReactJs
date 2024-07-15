@@ -61,16 +61,18 @@ function HeaderComponent(props) {
         </Typography>
       </div>
       <div className={classes.headerContent}>
-        <Avatar
-          alt="User Profile"
-          className={classes.menuItem}
-          src={process.env.API_BASE_URL + profileImg}
-        />
         <Bookmark
           className={`${classes.menuItem} ${classes.menuIcon}`}
           onClick={openBookMarkDrawer}
         />
-        <Logout className={classes.menuIcon} onClick={handleLogout} />
+        <Logout
+          className={`${classes.menuItem} ${classes.menuIcon}`}
+          onClick={handleLogout}
+        />
+        <Avatar
+          alt="User Profile"
+          src={process.env.IMAGE_URL + profileImg}
+        />
       </div>
       {openDrawer && <BookmarkComponent setOpenDrawer={setOpenDrawer} />}
     </div>
