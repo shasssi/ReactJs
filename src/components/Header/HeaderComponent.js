@@ -13,6 +13,7 @@ import { LOGOUT_CONTENT_TEXT, LOGOUT_HEADER_TEXT } from "../constant";
 import BookmarkComponent from "../Bookmark/BookmarkComponent";
 import { resetScollPosition } from "../../redux/slice/scrollSlice";
 import { logout } from "../../redux/slice/user";
+import { PROFILE_IMG } from "../../common/constants";
 
 function HeaderComponent(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -21,7 +22,8 @@ function HeaderComponent(props) {
   const dispatch = useDispatch();
   const classes = useStyles();
   const { openDialogModal, closeDialogModal } = props;
-  const profileImg = auth?.user?.profileImg;
+  const profileImg =
+    auth?.user?.profileImg || window.localStorage.getItem(PROFILE_IMG);
 
   const handleLogout = () => {
     openDialogModal({
@@ -69,10 +71,7 @@ function HeaderComponent(props) {
           className={`${classes.menuItem} ${classes.menuIcon}`}
           onClick={handleLogout}
         />
-        <Avatar
-          alt="User Profile"
-          src={process.env.IMAGE_URL + profileImg}
-        />
+        <Avatar alt="User Profile" src={process.env.IMAGE_URL + profileImg} />
       </div>
       {openDrawer && <BookmarkComponent setOpenDrawer={setOpenDrawer} />}
     </div>
