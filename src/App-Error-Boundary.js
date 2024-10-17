@@ -21,8 +21,10 @@ const CompA = () => {
     <>
       <p>Component A</p>
       <button
+        data-testid="button"
         onClick={() => {
-          throw Error("click error");
+          console.log("Button clicked");
+          // throw Error("click error");
         }}
       >
         Error
