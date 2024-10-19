@@ -17,3 +17,4 @@
 #### testing library
 https://www.youtube.com/playlist?list=PLIGDNOJWiL182w2gKS5TsDuO6PZkJa0tK
 - Jest is a testing framework which provides assertions, mocking etc..
+- act and wait for usecase - https://davidwcai.medium.com/react-testing-library-and-the-not-wrapped-in-act-errors-491a5629193b

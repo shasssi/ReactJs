@@ -1,7 +1,7 @@
 import { STATUS_CODE_UNAUTHORIZED } from "../common/constants";
 
 export const handleError = (error) => {
-  console.log("ERROR-LOG", error);
+  // console.log("ERROR-LOG", error);
   let errMsg = "";
   isUserAuthorized(error?.response);
   if (typeof error?.response?.data?.err === "string") {

@@ -105,7 +105,7 @@ function LoginForm({ formikState }) {
       formData.append("name", values?.name);
       formData.append("email", values?.email);
       formData.append("password", values?.password);
-      const response = await dispatch(signUp(formData));
+      dispatch(signUp(formData));
       clearSignInFieldValues();
       setTouched({});
       setIsSignUp(false);
@@ -140,6 +140,7 @@ function LoginForm({ formikState }) {
             </header>
             {isSignUp && (
               <TextField
+                data-testid="input-name"
                 className={classes.input}
                 id="standard-password-input"
                 label="Name"
@@ -154,6 +155,7 @@ function LoginForm({ formikState }) {
               {errors.name && touched.name === false && errors.name}
             </p>
             <TextField
+              data-testid="input-email"
               className={classes.input}
               id="standard-password-input"
               label="Email"
@@ -171,6 +173,7 @@ function LoginForm({ formikState }) {
                 Password
               </InputLabel>
               <Input
+                data-testid="input-password"
                 id="standard-adornment-password"
                 type={showPassword ? "text" : "password"}
                 onChange={(e) => handleInputChange(e, "password")}
@@ -179,6 +182,7 @@ function LoginForm({ formikState }) {
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
+                      data-testid="btn-togglePassword"
                       aria-label="toggle password visibility"
                       onClick={handleClickShowPassword}
                     >
@@ -202,6 +206,7 @@ function LoginForm({ formikState }) {
                     Confirm Password
                   </InputLabel>
                   <Input
+                    data-testid="input-confirmPassword"
                     id="standard-adornment-password"
                     type={showPassword ? "text" : "password"}
                     onChange={(e) => handleInputChange(e, "confirmPassword")}
@@ -210,6 +215,7 @@ function LoginForm({ formikState }) {
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton
+                          data-testid="btn-toggleConfirmPassword"
                           aria-label="toggle password visibility"
                           onClick={handleClickShowPassword}
                         >
@@ -234,9 +240,15 @@ function LoginForm({ formikState }) {
                       variant="contained"
                       className={classes.uploadButton}
                       component="label"
+                      // data-testid="input-file"
                     >
                       <FileUploadSharp /> Profile Image
-                      <input type="file" onChange={onFileChange} hidden />
+                      <input
+                        type="file"
+                        data-testid="input-file"
+                        onChange={onFileChange}
+                        hidden
+                      />
                     </Button>
                   </Grid>
                   {fileData?.name && (
@@ -274,6 +286,7 @@ function LoginForm({ formikState }) {
             )}
             {!isSignUp && (
               <Button
+                data-testid="btn-signIn"
                 variant="contained"
                 onClick={handleSignIn}
                 className={classes.signInButton}
@@ -283,6 +296,7 @@ function LoginForm({ formikState }) {
             )}
             {isSignUp && (
               <Button
+                data-testid="btn-signUp"
                 variant="contained"
                 onClick={handleSignUp}
                 className={classes.signUpButton}
@@ -293,6 +307,7 @@ function LoginForm({ formikState }) {
             <p className={classes.or}>OR</p>
             {isSignUp && (
               <Button
+                data-testid="btn-existingUserSignIn"
                 variant="contained"
                 onClick={() => {
                   clearSignInFieldValues();
@@ -306,6 +321,7 @@ function LoginForm({ formikState }) {
             )}
             {!isSignUp && (
               <Button
+                data-testid="btn-newUserSignUp"
                 variant="contained"
                 onClick={() => {
                   clearSignUpFieldValues();
