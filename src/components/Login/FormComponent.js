@@ -260,6 +260,7 @@ function LoginForm({ formikState }) {
                       </Grid>
                       <Grid item xs={2}>
                         <Cancel
+                          data-testid="btn-cancelUpload"
                           className={classes.uploadCancel}
                           onClick={() => setFileData({})}
                         />
@@ -276,6 +277,7 @@ function LoginForm({ formikState }) {
                     </Grid>
                     <Grid item xs={2} padding={0}>
                       <Cancel
+                        data-testid="btn-uploadError"
                         className={classes.uploadErroCancel}
                         onClick={() => setFileError("")}
                       />
