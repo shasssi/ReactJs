@@ -2,6 +2,7 @@ const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -10,6 +11,23 @@ module.exports = {
     filename: "bundle.js",
     publicPath:
       "/" /* added public path to fix the page refresh issue for lazy loaded componenet */,
+  },
+  devtool: "source-map",
+  mode: "production",
+  optimization: {
+    minimize: true,
+    minimizer: [
+      (compiler) => {
+        const TerserPlugin = require("terser-webpack-plugin");
+        new TerserPlugin({
+          terserOptions: {
+            compress: true,
+          },
+          parallel: true,
+          extractComments: false, // prevent creating separate LICENSE.txt files
+        }).apply(compiler);
+      },
+    ],
   },
   module: {
     rules: [
@@ -48,7 +66,10 @@ module.exports = {
       patterns: [{ from: "src/assets", to: "assets", toType: "dir" }],
     }),
     new Dotenv({
-      systemvars: true, // FIX - Issue while picking env var used as process.env in production 
+      systemvars: true, // FIX - Issue while picking env var used as process.env in production
+    }),
+    new CompressionPlugin({
+      algorithm: "gzip",
     }),
   ],
 };
