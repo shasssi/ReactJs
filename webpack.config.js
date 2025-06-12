@@ -3,6 +3,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const CompressionPlugin = require("compression-webpack-plugin");
+// const BrotliPlugin = require("brotli-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -69,7 +70,10 @@ module.exports = {
       systemvars: true, // FIX - Issue while picking env var used as process.env in production
     }),
     new CompressionPlugin({
-      algorithm: "gzip",
+      // algorithm: "gzip",
+      algorithm: "brotliCompress",
+      minRatio: Number.MAX_SAFE_INTEGER,
     }),
+    // new BrotliPlugin(),
   ],
 };
