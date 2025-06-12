@@ -7,7 +7,8 @@ const CompressionPlugin = require("compression-webpack-plugin");
 // const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  // entry: "./src/index.js", /** without polyfill */
+  entry: [require.resolve('./polyfills'), './src/index.js'], /** with polyfill */
   output: {
     path: path.join(__dirname, "/build"),
     filename: "[name].js",
