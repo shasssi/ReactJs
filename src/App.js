@@ -2,11 +2,7 @@ import React, { lazy, Suspense } from "react";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import createTheme from "@mui/material/styles/createTheme";
 import { Provider } from "react-redux";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DashboardComponet from "./components/Dashboard/DashboardComponet";
 import SkeletonComponent from "./common/Skeleton/SkeletonComponent";
 import PrivateRoute from "./PrivateRoute";
@@ -30,7 +26,7 @@ const theme = createTheme({
 
 const TutorialComponent = lazy(() =>
   import(
-    "../src/components/Tutorial/TutorialComponent" /* webpackChunkName: "tutorialComponent" */
+    /* webpackChunkName: "tutorialComponent" */ "../src/components/Tutorial/TutorialComponent"
   )
 );
 
@@ -50,7 +46,7 @@ function App() {
                   </Suspense>
                 }
               />
-              <Route path="/testroute" element={<SkeletonComponent />} />
+              {/* <Route path="/testroute" element={<SkeletonComponent />} /> */}
             </Route>
             <Route path="/login" element={<LoginComponent />} />
           </Routes>

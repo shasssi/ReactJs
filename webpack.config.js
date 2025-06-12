@@ -4,12 +4,14 @@ const CopyPlugin = require("copy-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const CompressionPlugin = require("compression-webpack-plugin");
 // const BrotliPlugin = require("brotli-webpack-plugin");
+// const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.join(__dirname, "/build"),
-    filename: "bundle.js",
+    filename: "[name].js",
+    chunkFilename: "[name].js",
     publicPath:
       "/" /* added public path to fix the page refresh issue for lazy loaded componenet */,
   },
@@ -19,6 +21,8 @@ module.exports = {
     minimize: true,
     minimizer: [
       (compiler) => {
+        // Webpack 5 now uses terser-webpack-plugin by default for code uglify & minification.
+        // uglifyjs-webpack-plugin is deprecated
         const TerserPlugin = require("terser-webpack-plugin");
         new TerserPlugin({
           terserOptions: {
@@ -70,10 +74,11 @@ module.exports = {
       systemvars: true, // FIX - Issue while picking env var used as process.env in production
     }),
     new CompressionPlugin({
-      // algorithm: "gzip",
-      algorithm: "brotliCompress",
+      algorithm: "gzip",
+      // algorithm: "brotliCompress",
       minRatio: Number.MAX_SAFE_INTEGER,
     }),
-    // new BrotliPlugin(),
+    // new BrotliPlugin(), /** deprecated */
+    // new UglifyJSPlugin(), /** deprecated */
   ],
 };
